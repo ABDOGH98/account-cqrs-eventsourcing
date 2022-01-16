@@ -59,6 +59,7 @@ public class AccountCommnadController {
     public Stream eventStore(@PathVariable String id){
         return eventStore.readEvents(id).asStream();
     }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> exceptionHandler(Exception exception){
         ResponseEntity<String> responseEntity = new ResponseEntity<>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

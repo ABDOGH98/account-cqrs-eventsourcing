@@ -74,7 +74,7 @@ public class AccountAgreggate {
 
         if (this.balance<command.getAmount()) throw new BalanceNotSufficientException("Blanace Not Sufficient Exception");
 
-        AggregateLifecycle.apply(new AccountCreditedEvent(
+        AggregateLifecycle.apply(new AccountDebitEvent(
                 command.getId(),
                 command.getAmount(),
                 command.getCurrency()
